@@ -8,4 +8,4 @@ This programming assignment is designed for students to warmup your C programmin
 
 
 ## Q & A
-Please read carefully the handout file before starting this assignment! If you find any errors in this code or have a question, leave a post on AjouBB. 
+Please read carefully the handout file before starting this assignment! If you find any errors in this skeleton code or have a question, leave a post on AjouBB. 
