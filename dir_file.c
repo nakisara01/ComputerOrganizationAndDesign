@@ -92,8 +92,10 @@ file_t* find_create_file(directory_t* dir, char* name, bool* is_create) {
     return file;
 }
 
-// This make_dir_and_file() make hierarchy of file and directory which is indicated by token_list.
-// Everything starts in root_dir. You can implement this function using find_create_dir() and find_create_file().
+// This function creates the hierarchy of files and directories
+// which are indicated by token_list. Everything starts in root_dir.
+// You can implement this function using the above find_create_dir() 
+// and find_create_file() functions.
 void make_dir_and_file(directory_t* root_dir, char** token_list, int num_tokens) {
     /* Fill this function */
 }

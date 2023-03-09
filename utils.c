@@ -21,8 +21,9 @@ int open_file(char* fname, FILE** input) {
     return 1;
 }
 
-// This parse_str_to_list() split string to the tokens, and put the tokens in token_list.
-// The value of return is the number of tokens.
+// This function splits the input string (const char* str) to tokens
+// and put the tokens in token_list. The return value must be the number
+// of tokens in the given input string.
 int parse_str_to_list(const char* str, char** token_list) {
     /* Fill this function */
 }
