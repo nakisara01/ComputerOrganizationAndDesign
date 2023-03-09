@@ -1,8 +1,8 @@
 # Project #0: Warming up C Programming
 
-Due: March 21, 23:59
+Due: March 22, 23:59
 
-## Overview 
+## Overview
 
 This programming assignment is designed for students to warm up your C programming (e.g., parsing strings, pointers, and structures). The students should be fluent in C programming language in order to complete the programming assignments. If not, you should spend extra time learning or reviewing your C coding skills. (Note: in previous semesters, many of the students dropped the classes because of their programming skills...)
 
