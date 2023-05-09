@@ -98,6 +98,48 @@ file_t* find_create_file(directory_t* dir, char* name, bool* is_create) {
 // and find_create_file() functions.
 void make_dir_and_file(directory_t* root_dir, char** token_list, int num_tokens) {
     /* Fill this function */
+    directory_t *current_dir=root_dir;
+    directory_t *child_dir;
+    file_t *file;
+    int index=0;
+    static int i=0;
+    bool is_create;
+    //printf("--------\n");
+    while(index<num_tokens-1){  //file 나오기 전까지 반복문 동작
+        //printf("\nworking(while)\n");
+        is_create=false;
+        child_dir = find_create_dir(current_dir, token_list[index], &is_create);
+        //printf("\nworking(find_create_dir)\n");
+        //printf("child_dir=%s\n", child_dir->name); 
+        //printf("file created?: %d\n", is_create); 
+        //printf("current_dir name: %s\n", current_dir->name);
+        
+        if(is_create){ //root_dir안에 dir_list안에 token_list[index]이름을 가진 폴더구조체생성
+            //처음에는 root_dir안에 dir_list안에 ex)home이라는 directory_t 생성
+            //printf("\nc new dir: %s\n", child_dir->name);
+            //printf("-------------------------------------------");
+            //printf("현재dir의 num_dirs: %d\n", current_dir->num_dirs);
+            current_dir->dir_list[current_dir->num_dirs]=child_dir;
+            (current_dir->num_dirs)++;
+            //printf("is_create working(dir)\n");
+        }
+
+        current_dir=child_dir;
+        //printf("next current_dir name: %s\n", current_dir->name);
+        index++;
+        //printf("index: %d\n\n", index);
+    }
+
+    file=find_create_file(current_dir, token_list[index], &is_create);
+    if(is_create){
+        current_dir->file_list[current_dir->num_files]=file;
+        //printf("\nfile name: %s", current_dir->file_list[current_dir->num_files]);
+        (current_dir->num_files)++;
+    }
+    
+    //printf("\nnum_files?: %d\n", current_dir->num_files);
+    //printf("-------------------------------------------");
+    i++;
 }
 
 void free_dir_and_file(directory_t* dir) {

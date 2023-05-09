@@ -26,13 +26,21 @@ int open_file(char* fname, FILE** input) {
 // of tokens in the given input string.
 int parse_str_to_list(const char* str, char** token_list) {
     /* Fill this function */
+    int i=0;
+    char *token= strtok(*str, "/\n");
+
+    while(token!=NULL){
+        token_list[i]=(char*)malloc((sizeof(char)*MAX_TOKEN_NUM));
+        strcpy(token_list[i], token);
+        token=strtok(NULL, "/\n");
+        i++;
+    }
 }
 
 void free_token_list(char** token_list, int num_tokens) {
     for (int i = 0; i < num_tokens; i++) {
         free(token_list[i]);
     }
-
     free(token_list);
 }
 
